@@ -1,0 +1,95 @@
+#book {
+  margin-top: 6.5rem;
+  padding: 5rem 1.25rem;
+  position: relative;
+
+  &:hover {
+    & > h2 {
+      animation: color-text-white 1s ease forwards;
+
+      & > span {
+        animation: color-blue-light 1s ease forwards;
+
+        & > img[src*="mystery-opened-spellbook"] {
+          animation: appear-icons 1s ease forwards;
+        }
+
+        & > img[src*="mystery-ouija-planchette"] {
+          animation: appear-icons 1s 1s ease forwards;
+        }
+
+        & > img[src*="mystery-crystal-ball"] {
+          animation: appear-icons 1s 2s ease forwards;
+        }
+      }
+
+    }
+  }
+
+  & > h2 {
+    max-width: 75rem;
+    margin-inline: auto;
+    display: inline;
+
+    font: var(--subtitle);
+    font-weight: 700;
+    color: var(--text-label);
+    opacity: .6;
+    
+
+    & span {
+      position: relative;
+      color: var(--text-body);
+      display: inline-block;
+
+      & > img {
+        width: 2.5rem;
+        height: 2.5rem;
+        opacity: 0;
+      }
+
+      & > img[src*="mystery-opened-spellbook"] {
+        position: absolute;
+        top: -3rem;
+        right: -1.5rem;
+        transform: rotate(15deg);
+        transition: transform 400ms;
+
+        &:hover {
+          transform: rotate(30deg) scale(1.1);
+        }
+      }
+
+      & > img[src*="mystery-ouija-planchette"] {
+        position: absolute;
+        bottom: -3rem;
+        left: -1.5rem;
+        transform: rotate(-30deg);
+        transition: transform 400ms;
+
+        &:hover {
+          transform: rotate(-20deg) scale(1.1);
+        }
+      }
+
+      & > img[src*="mystery-crystal-ball"] {
+        position: absolute;
+        bottom: -1.5rem;
+        right: -3rem;
+        transform: rotate(15deg);
+        transition: transform 400ms;
+
+        &:hover {
+          transform: rotate(30deg) scale(1.1);
+        }
+      }
+    }
+  }
+
+  & > h2:nth-child(2) {
+    animation-delay: 1s;
+  }
+  & h2:nth-child(3) {
+    animation-delay: 2s;
+  }
+}
