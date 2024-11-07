@@ -185,3 +185,108 @@
     left: -5rem;
   }
 }
+
+@media (width >= 80em) {
+  #monthly-kit {
+    padding: 14.75rem 1.25rem  17.25rem;
+    & > main {
+      & .book {
+        & > img[src*="assets/images/book.png"] {
+          width: 29.25rem;
+          height: 38.5rem;
+        }
+  
+        & .back-book {
+          margin-top: 14rem;
+          width: 29.25rem;
+          height: 38.5rem;
+      
+          & > img[src*="purple"] {
+            width: 10.75rem;
+            height: 33.5rem;
+          }
+    
+          & > img[src*="yellow"] {
+            width: 10.75rem;
+            height: 33.5rem;
+          }
+    
+          & > img[src*="images/pin.png"] {
+            width: 13.875rem;
+            height: 15.875rem;
+            left: 2rem;
+          }
+    
+          & > img[src*="icons/book-description.svg"] {
+            top: 3rem;
+            left: 5rem;
+            width: initial;
+          }
+    
+          & > img[src*="icons/pin-description.svg"] {
+            bottom: 2.5rem;
+            left: 3rem;
+            width: initial;
+          }
+    
+          & > img[src*="icons/bookmark-description.svg"] {
+            right: .5rem;
+            bottom: 3rem;
+            width: initial;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes purple-bookmark {
+    60% {
+      transform: rotate(30deg);
+    }
+    100% {
+      bottom: 3rem;
+      right: -13.5rem;
+      transform: rotate(20deg);
+    }
+  }
+  
+  @keyframes yellow-bookmark {
+    60% {
+      transform: rotate(20deg);
+    }
+    100% {
+      top: -3.5rem;
+      right: -7rem;
+      transform: rotate(12deg);
+    }
+  }
+
+  @keyframes pin {
+    100% {
+      bottom: -5.25rem;
+      left: -8rem;
+      transform: rotate(-8deg);
+    }
+  }
+
+  @keyframes book-description {
+    100% {
+      top: -3.5rem;
+      left: -13.5rem;
+    }
+  }
+
+  @keyframes pin-description {
+    100% {
+      bottom: 6.5rem;
+      left: -11rem;
+    }
+  }
+
+  @keyframes bookmark-description {
+    100% {
+      right: -10rem;
+      bottom: -7rem;
+    }
+  }
+}

@@ -152,3 +152,123 @@
     transform: translateX(0);
   }
 }
+
+@media (width >= 80em) {
+  #pricing {
+    padding: 12.125rem 12.125rem 19.25rem;
+
+    & header > div {
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    & > main {
+      margin-top: 6.5rem;
+      overflow: initial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+
+      & .card {
+        position: relative;
+        & > img {
+          transition: transform 400ms;
+        }
+      }
+      
+      & > .monthly {
+        animation: fist-card 1s both;
+
+        & .card {
+          transform: rotate(-8deg);
+          transition: transform 400ms;
+          
+          &:hover {
+            transform: translateY(-1rem) rotate(-8deg);
+            & > img:nth-child(1) {
+              transform: rotate(-30deg);
+            }
+            & > img:nth-child(2) {
+              transform: rotate(30deg);
+            }
+          }
+  
+          & > img:nth-child(1) {
+            position: absolute;
+            top: -2rem;
+            left: -1.5rem;
+            width: 1.625rem;
+            height: 1.625rem;
+            z-index: 2;
+          }
+  
+          & > img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            width: 0.875rem;
+            height: 0.875rem;
+            z-index: 2;
+          }
+        }
+      }
+      
+      & > .semester {
+        z-index: 1;
+        & .card {
+          transition: transform 400ms;
+          transform: translateY(-2rem);
+          &:hover {
+            transform: translateY(-3rem);
+          }
+          
+          & > img {
+            position: absolute;
+            top: -3rem;
+            left: 2rem;
+            width: 2.875rem;
+            height: 3rem;
+          }
+        }
+      }
+
+      & > .year {
+        z-index: 0;
+        animation: last-card 1s both;
+
+        & .card {
+          transition: transform 400ms;
+          transform: rotate(8deg);
+          &:hover {
+            transform: rotate(8deg) translateY(-1rem);
+  
+            & > img:nth-child(1) {
+              transform: rotate(30deg);
+            }
+            & > img:nth-child(2) {
+              transform: rotate(-30deg);
+            }
+          }
+          & > img:nth-child(1) {
+            position: absolute;
+            bottom: -1rem;
+            right: -2rem;
+            width: 1.625rem;
+            height: 1.625rem;
+            z-index: 2;
+          }
+  
+          & > img:nth-child(2) {
+            position: absolute;
+            bottom: -2rem;
+            right: 0;
+            width: 0.875rem;
+            height: 0.875rem;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
