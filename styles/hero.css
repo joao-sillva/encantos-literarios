@@ -46,3 +46,12 @@
     opacity: 1;
   }
 }
+
+@media (width >= 80em) {
+  #hero {
+    & > div {
+      margin-top: 8.25rem;
+      padding-inline: 10rem;
+    }
+  }
+}

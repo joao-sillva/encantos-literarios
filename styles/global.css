@@ -88,3 +88,21 @@ img {
 .only-mobile {
   display: initial;
 }
+
+@media (width >= 80em) {
+  :root {
+    --title-lg: 700 3rem / 100% var(--ff-raleway);
+    --title-sm: 700 2rem / 100% var(--ff-raleway);
+    --subtitle: 500 2rem / 200% var(--ff-raleway);
+    --body-lg: 400 1.25rem / 140% var(--ff-raleway);
+    --body-md: 400 1rem / 140% var(--ff-raleway);
+  }
+
+  .only-desktop {
+    display: initial;
+  }
+  
+  .only-mobile {
+    display: none;
+  }
+}
