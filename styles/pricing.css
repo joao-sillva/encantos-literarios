@@ -1,0 +1,154 @@
+#pricing {
+  padding: 6.5rem 3.25rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  & header {
+    width: 100%;
+    display: block;
+    margin-inline: auto;
+  }
+
+  & > main {
+    margin-top: 3rem;
+    width: 100%;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow: auto;
+
+    & .card {
+      padding: 2rem 2rem 1.5rem;
+      background: var(--shape-base);
+      border-radius: 1.5rem;
+      border: 1px solid var(--shape-stroke);
+
+      min-width: 18rem;
+      height: 26rem;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 400ms;
+
+      &.card-primary {
+        & div {
+          & h3 {
+            color: var(--blue-light);
+          }
+        }
+      } 
+      &.card-secondary {
+        & div {
+          & h3 {
+            color: var(--pink-light);
+          }
+        }
+      } 
+
+      &:hover {
+        background-color: var(--shape-hover);
+      }
+
+      & div {
+        & .header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          & span {
+            margin-top: 0;
+            
+            font: var(--tag);
+            background-color: var(--shape-stroke);
+            border-radius: 5rem;
+
+            padding: .5rem 1.25rem;
+            text-transform: uppercase;
+          }
+        }
+
+        & h3 {
+          font: var(--title-xs);
+        }
+
+        & > p {
+          margin-top: 1.5rem;
+          color: var(--text-title);
+          font: var(--title-md);
+  
+          & small {
+            font: var(--title-xs)
+          }
+        }
+  
+        & span {
+          margin-top: .5rem;
+          color: var(--text-label);
+          font: var(--body-sm);
+        }
+
+        & ul {
+          display: flex;
+          flex-direction: column;
+          gap: .75rem;
+  
+          & li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+  
+            & p {
+              font: var(--body-xs);
+            }
+  
+            & img {
+              width: .5rem;
+              height: .5rem;
+            }
+          }
+        }
+      }
+
+      & button {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes fist-card {
+  0% {
+    scale: .8;
+    opacity: 0;
+    transform: translateX(18rem);
+  }
+  1% {
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes last-card {
+  0% {
+    scale: .8;
+    opacity: 0;
+    transform: translateX(-18rem);
+  }
+  1% {
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
