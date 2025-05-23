@@ -1,0 +1,292 @@
+#monthly-kit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem 1.25rem  5.5rem; 
+  
+  & > header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      & img {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      & h2 {
+        color: var(--text-body);
+        font: var(--title-sm);
+      }
+    }
+  }
+
+  & > main {
+    width: 100%;
+    
+    & .book {
+      position: relative;
+
+      &:hover {
+        & .back-book {
+          & > img[src*="icons/book-description.svg"] {
+            animation: book-description .6s forwards;
+          }
+
+          & > img[src*="yellow"] {
+            animation: yellow-bookmark .6s forwards;
+          }
+
+          & > img[src*="purple"] {
+            animation: purple-bookmark .6s forwards;
+          }
+
+          & > img[src*="icons/bookmark-description.svg"] {
+            animation: bookmark-description .6s ease forwards;
+          }
+
+          & > img[src*="images/pin.png"] {
+            animation: pin .6s ease forwards;
+          }
+
+          & > img[src*="icons/pin-description.svg"] {
+            animation: pin-description .6s ease forwards;
+          }
+        }
+      }
+
+      & > img[src*="assets/images/book.png"] {
+        width: 9.75rem;
+        height: 12.875rem;
+        margin-inline: auto;
+        inset: 0;
+        z-index: 2;
+        position: absolute;
+      }
+
+      & .back-book {
+        margin-top: 4rem;
+        position: relative;
+        width: 9.75rem;
+        height: 12.875rem;
+        margin-inline: auto;
+    
+        & > img[src*="purple"] {
+          position: absolute;
+          bottom: 1rem;
+          right: 0;
+          width: 3.75rem;
+          height: 11.25rem;
+          z-index: 0;
+        }
+  
+        & > img[src*="yellow"] {
+          position: absolute;
+          top: 0.25rem;
+          right: 0;
+          width: 3.75rem;
+          height: 11.25rem;
+          
+          z-index: 0;
+        }
+  
+        & > img[src*="images/pin.png"] {
+          position: absolute;
+          width: 4.75rem;
+          height: 5,25rem;
+          z-index: 0;
+          bottom: 0;
+          left: 1rem;
+        }
+  
+        & > img[src*="icons/book-description.svg"] {
+          position: absolute;
+          top: 1rem;
+          left: 1.5rem;
+          z-index: 0;
+          width: 7rem;
+        }
+  
+        & > img[src*="icons/pin-description.svg"] {
+          position: absolute;
+          bottom: 2.5rem;
+          left: 1.25rem;
+          z-index: 0;
+          width: 3.75rem;
+        }
+  
+        & > img[src*="icons/bookmark-description.svg"] {
+          position: absolute;
+          right: .5rem;
+          bottom: 1rem;
+          z-index: 0;
+          width: 6rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes book-description {
+  100% {
+    top: -2rem;
+    left: -6rem;
+  }
+}
+
+@keyframes yellow-bookmark {
+  60% {
+    transform: rotate(20deg);
+  }
+  100% {
+    top: -1.5rem;
+    right: -2.5rem;
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes purple-bookmark {
+  60% {
+    transform: rotate(30deg);
+  }
+  100% {
+    bottom: .5rem;
+    right: -4.5rem;
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes bookmark-description {
+  100% {
+    right: -3.875rem;
+    bottom: -3.875rem;
+  }
+}
+
+@keyframes pin {
+  100% {
+    bottom: -2.25rem;
+    left: -2.75rem;
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes pin-description {
+  100% {
+    bottom: 2rem;
+    left: -5rem;
+  }
+}
+
+@media (width >= 80em) {
+  #monthly-kit {
+    padding: 14.75rem 1.25rem  17.25rem;
+    & > main {
+      & .book {
+        & > img[src*="assets/images/book.png"] {
+          width: 29.25rem;
+          height: 38.5rem;
+        }
+  
+        & .back-book {
+          margin-top: 14rem;
+          width: 29.25rem;
+          height: 38.5rem;
+      
+          & > img[src*="purple"] {
+            width: 10.75rem;
+            height: 33.5rem;
+          }
+    
+          & > img[src*="yellow"] {
+            width: 10.75rem;
+            height: 33.5rem;
+          }
+    
+          & > img[src*="images/pin.png"] {
+            width: 13.875rem;
+            height: 15.875rem;
+            left: 2rem;
+          }
+    
+          & > img[src*="icons/book-description.svg"] {
+            top: 3rem;
+            left: 5rem;
+            width: initial;
+          }
+    
+          & > img[src*="icons/pin-description.svg"] {
+            bottom: 2.5rem;
+            left: 3rem;
+            width: initial;
+          }
+    
+          & > img[src*="icons/bookmark-description.svg"] {
+            right: .5rem;
+            bottom: 3rem;
+            width: initial;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes purple-bookmark {
+    60% {
+      transform: rotate(30deg);
+    }
+    100% {
+      bottom: 3rem;
+      right: -13.5rem;
+      transform: rotate(20deg);
+    }
+  }
+  
+  @keyframes yellow-bookmark {
+    60% {
+      transform: rotate(20deg);
+    }
+    100% {
+      top: -3.5rem;
+      right: -7rem;
+      transform: rotate(12deg);
+    }
+  }
+
+  @keyframes pin {
+    100% {
+      bottom: -5.25rem;
+      left: -8rem;
+      transform: rotate(-8deg);
+    }
+  }
+
+  @keyframes book-description {
+    100% {
+      top: -3.5rem;
+      left: -13.5rem;
+    }
+  }
+
+  @keyframes pin-description {
+    100% {
+      bottom: 6.5rem;
+      left: -11rem;
+    }
+  }
+
+  @keyframes bookmark-description {
+    100% {
+      right: -10rem;
+      bottom: -7rem;
+    }
+  }
+}
