@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1.25rem;
+
+  & img {
+    width: 4rem;
+    height: 3rem;
+  }
+}
+
+@media (width >= 80em) {
+  header {
+    padding: 3.5rem 10rem;
+
+    & img {
+      width: 14.375rem;
+      height: 3.625rem;
+    }
+  }
+}
