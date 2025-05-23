@@ -1,0 +1,274 @@
+#pricing {
+  padding: 6.5rem 3.25rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  & header {
+    width: 100%;
+    display: block;
+    margin-inline: auto;
+  }
+
+  & > main {
+    margin-top: 3rem;
+    width: 100%;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow: auto;
+
+    & .card {
+      padding: 2rem 2rem 1.5rem;
+      background: var(--shape-base);
+      border-radius: 1.5rem;
+      border: 1px solid var(--shape-stroke);
+
+      min-width: 18rem;
+      height: 26rem;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 400ms;
+
+      &.card-primary {
+        & div {
+          & h3 {
+            color: var(--blue-light);
+          }
+        }
+      } 
+      &.card-secondary {
+        & div {
+          & h3 {
+            color: var(--pink-light);
+          }
+        }
+      } 
+
+      &:hover {
+        background-color: var(--shape-hover);
+      }
+
+      & div {
+        & .header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          & span {
+            margin-top: 0;
+            
+            font: var(--tag);
+            background-color: var(--shape-stroke);
+            border-radius: 5rem;
+
+            padding: .5rem 1.25rem;
+            text-transform: uppercase;
+          }
+        }
+
+        & h3 {
+          font: var(--title-xs);
+        }
+
+        & > p {
+          margin-top: 1.5rem;
+          color: var(--text-title);
+          font: var(--title-md);
+  
+          & small {
+            font: var(--title-xs)
+          }
+        }
+  
+        & span {
+          margin-top: .5rem;
+          color: var(--text-label);
+          font: var(--body-sm);
+        }
+
+        & ul {
+          display: flex;
+          flex-direction: column;
+          gap: .75rem;
+  
+          & li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+  
+            & p {
+              font: var(--body-xs);
+            }
+  
+            & img {
+              width: .5rem;
+              height: .5rem;
+            }
+          }
+        }
+      }
+
+      & button {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes fist-card {
+  0% {
+    scale: .8;
+    opacity: 0;
+    transform: translateX(18rem);
+  }
+  1% {
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes last-card {
+  0% {
+    scale: .8;
+    opacity: 0;
+    transform: translateX(-18rem);
+  }
+  1% {
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (width >= 80em) {
+  #pricing {
+    padding: 12.125rem 12.125rem 19.25rem;
+
+    & header > div {
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    & > main {
+      margin-top: 6.5rem;
+      overflow: initial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+
+      & .card {
+        position: relative;
+        & > img {
+          transition: transform 400ms;
+        }
+      }
+      
+      & > .monthly {
+        animation: fist-card 1s both;
+
+        & .card {
+          transform: rotate(-8deg);
+          transition: transform 400ms;
+          
+          &:hover {
+            transform: translateY(-1rem) rotate(-8deg);
+            & > img:nth-child(1) {
+              transform: rotate(-30deg);
+            }
+            & > img:nth-child(2) {
+              transform: rotate(30deg);
+            }
+          }
+  
+          & > img:nth-child(1) {
+            position: absolute;
+            top: -2rem;
+            left: -1.5rem;
+            width: 1.625rem;
+            height: 1.625rem;
+            z-index: 2;
+          }
+  
+          & > img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            width: 0.875rem;
+            height: 0.875rem;
+            z-index: 2;
+          }
+        }
+      }
+      
+      & > .semester {
+        z-index: 1;
+        & .card {
+          transition: transform 400ms;
+          transform: translateY(-2rem);
+          &:hover {
+            transform: translateY(-3rem);
+          }
+          
+          & > img {
+            position: absolute;
+            top: -3rem;
+            left: 2rem;
+            width: 2.875rem;
+            height: 3rem;
+          }
+        }
+      }
+
+      & > .year {
+        z-index: 0;
+        animation: last-card 1s both;
+
+        & .card {
+          transition: transform 400ms;
+          transform: rotate(8deg);
+          &:hover {
+            transform: rotate(8deg) translateY(-1rem);
+  
+            & > img:nth-child(1) {
+              transform: rotate(30deg);
+            }
+            & > img:nth-child(2) {
+              transform: rotate(-30deg);
+            }
+          }
+          & > img:nth-child(1) {
+            position: absolute;
+            bottom: -1rem;
+            right: -2rem;
+            width: 1.625rem;
+            height: 1.625rem;
+            z-index: 2;
+          }
+  
+          & > img:nth-child(2) {
+            position: absolute;
+            bottom: -2rem;
+            right: 0;
+            width: 0.875rem;
+            height: 0.875rem;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
