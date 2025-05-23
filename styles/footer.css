@@ -1,0 +1,93 @@
+footer {
+  background: url(../assets/images/book-trace-background.png) no-repeat 50%/cover;
+  padding: 6rem 2rem 2.25rem;
+  width: 100%;
+
+  & > div:nth-child(1) {
+    margin-top: 2rem;
+
+    & > .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1.5rem;
+  
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+        border-radius: 50%;
+        transition: background 400ms;
+
+        &:hover {
+          background-color: #08233C;
+          & svg {
+            & path {
+              fill: var(--text-title);
+            }
+          }
+        }
+  
+        & svg {
+          & path {
+            transition: fill 400ms;
+            fill: var(--blue-base);
+          }
+        }
+      }
+    }
+  }
+
+  & > div:nth-child(2) {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    
+    & nav {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: left;
+      gap: 0.75rem;
+
+      & span {
+        margin-bottom: .5rem;
+        font: var(--title-xs);
+        color: var(--text-body);
+      }
+
+      & a {
+        font: var(--link);
+        color: var(--blue-light);
+        transition: color 300ms;
+
+        &:hover {
+          color: var(--text-body);
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 80em) {
+  footer {
+    background-position: initial;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5rem 10rem;
+
+    & > div:nth-child(1) {
+      & > img {
+        width: 22.5rem;
+      }
+      
+      & > .social {
+        gap: .5rem;
+      }
+    }
+  }
+}
