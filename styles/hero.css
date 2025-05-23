@@ -1,0 +1,57 @@
+#hero {
+  min-height: 100vh;
+  
+  & .hero-background {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+
+    object-fit: cover;
+    inset: 0;
+    z-index: -1;
+    animation: appear 3s;
+  }
+  
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    
+    margin-top: 3rem;
+    padding-inline: 1.25rem;
+    margin-inline: auto;
+
+    & > h1 {
+      max-width: 41rem;
+      animation: appear 3s;
+    }
+
+    & > p {
+      max-width: 35.5rem;
+      font: var(--body-lg);
+      color: var(--text-body);
+      opacity: 0;
+
+      animation: appear 2s 1s forwards;
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (width >= 80em) {
+  #hero {
+    & > div {
+      margin-top: 8.25rem;
+      padding-inline: 10rem;
+    }
+  }
+}
